@@ -23,3 +23,6 @@ An AI-powered interview preparation tool that generates personalized interview q
 
 ## Built By
 Vansh — CSE student at MRSPTU Bathinda, AI/ML specialization
+
+## Live Demo
+🚀 [Try it here](https://interview-prep-coach-ljgjxpqwcqxz9hnkzawnyw.streamlit.app)
