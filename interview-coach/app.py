@@ -35,7 +35,7 @@ with st.sidebar:
         st.success("Resume loaded ✓")
 
     st.markdown("### 🎚️ Difficulty")
-    difficulty = st.selectbox("", ["Fresher", "Mid-level", "Experienced"], label_visibility="collapsed")
+    difficulty = st.selectbox("Difficulty", ["Fresher", "Mid-level", "Experienced"], label_visibility="collapsed")
 
     st.markdown("---")
 
@@ -48,7 +48,8 @@ with st.sidebar:
     st.markdown("### 🕐 Past Sessions")
     past_sessions = get_past_sessions()
     for session in past_sessions:
-        with st.expander(f"📅 {session[1]} | {session[2]} | Score: {session[3]}/10"):
+        score_text = f"{session[3]}/10" if session[3] is not None else "N/A"
+        with st.expander(f"📅 {session[1]} | {session[2]} | Score: {score_text}"):
             messages = get_session_conversation(session[0])
             for msg in messages:
                 if msg["role"] == "user":
